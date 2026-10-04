@@ -1,0 +1,26 @@
+name: DeepSeek-R1 MLA CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Syntax Check Workloads
+        run: |
+          python3 -m py_compile deepseek_mla_engine.py
+          python3 -m py_compile dualpipe_scheduler.py
+          python3 -m py_compile deepseek_fp8_gemm.py
+      - name: Run Validation Script
+        run: |
+          chmod +x scripts/validate.sh
+          ./scripts/validate.sh

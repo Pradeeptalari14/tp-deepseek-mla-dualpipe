@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: deepseek-r1-moe-cluster
+  namespace: ai-workloads
+  labels:
+    app.kubernetes.io/name: deepseek-r1-moe
+spec:
+  replicas: 8
+  serviceName: deepseek-headless
+  selector:
+    matchLabels:
+      app: deepseek-r1-moe
+  template:
+    metadata:
+      labels:
+        app: deepseek-r1-moe
+    spec:
+      containers:
+        - name: deepseek-worker
+          image: ghcr.io/pradeeptalari14/deepseek-mla-cluster:latest
+          resources:
+            limits:
+              nvidia.com/gpu: "8"
+              memory: 512Gi
+            requests:
+              nvidia.com/gpu: "8"
+              memory: 256Gi
+          env:
+            - name: DEEPSEEK_MODEL
+              value: "deepseek-r1"
+            - name: ATTENTION_MODE
+              value: "mla_decoupled_rope"
+          ports:
+            - containerPort: 8000
+              name: api
