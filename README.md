@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # 🐋 DeepSeek-R1: Multi-Head Latent Attention (MLA) & DualPipe Studio
 
 [![DeepSeek MLA CI](https://github.com/Pradeeptalari14/tp-deepseek-mla-dualpipe/actions/workflows/deepseek-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-deepseek-mla-dualpipe/actions)
@@ -197,3 +200,6 @@ tp-deepseek-mla-dualpipe/
 
 - **License:** [MIT License](LICENSE)
 - **Attribution:** Maintained by **[Talari Pradeep](https://talaripradeep.info/)** · AI Infrastructure & Platform SRE Lead
+
+---
+*Synchronized with [DeepSeek-R1 Multi-Head Latent Attention & DualPipe Studio Studio](https://pradeeptalari.me/tools/deepseek-mla-dualpipe/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
